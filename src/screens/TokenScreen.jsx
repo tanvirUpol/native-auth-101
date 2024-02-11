@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native';
-import React, { useContext, useEffect, useState } from 'react';
+    import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
 const TokenScreen = () => {
@@ -11,7 +11,7 @@ const TokenScreen = () => {
 
         const fetchUserData = async () => {
             try {
-                const response = await fetch('http://192.168.52.188:4001/api/user/', {
+                const response = await fetch('users API', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

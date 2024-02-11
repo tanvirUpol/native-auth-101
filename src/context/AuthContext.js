@@ -12,7 +12,7 @@ export const AuthProvider = ({children}) => {
   const login = async (email, password) => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://192.168.52.188:4001/api/user/login', {
+      const response = await fetch('you api endpoint', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
