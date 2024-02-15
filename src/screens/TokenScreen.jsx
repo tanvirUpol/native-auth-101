@@ -11,7 +11,7 @@ const TokenScreen = () => {
 
         const fetchUserData = async () => {
             try {
-                const response = await fetch('users API', {
+                const response = await fetch('http://192.168.52.188:4001/api/user/', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

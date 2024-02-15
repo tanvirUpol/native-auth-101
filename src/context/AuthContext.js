@@ -12,7 +12,7 @@ export const AuthProvider = ({children}) => {
   const login = async (email, password) => {
     setIsLoading(true);
     try {
-      const response = await fetch('you api endpoint', {
+      const response = await fetch('http://192.168.52.192:4001/api/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,6 +22,7 @@ export const AuthProvider = ({children}) => {
 
       if (!response.ok) {
         setIsLoading(false);
+        console.log(response);
         throw new Error('Network response was not ok');
       }
 
@@ -33,7 +34,7 @@ export const AuthProvider = ({children}) => {
       AsyncStorage.setItem('user', JSON.stringify(data.user));
       setIsLoading(false);
     } catch (error) {
-      //   console.log(error);
+        console.log(error);
       setIsLoading(false);
       Alert.alert('Error', 'Login failed');
     }
